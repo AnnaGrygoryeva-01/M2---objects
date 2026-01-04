@@ -6,6 +6,20 @@
 // номер телефона,
 // адреса (є рядком або *об'єктом з властивостями місто, вулиця, дім, квартира) ;
 
+const customer = {
+  firstName: "Anna",
+  lastName: "Smith",
+  email: "anna@example.com",
+  password: "qwerty123",
+  telNumber: "+1234567890",
+  adress: {
+    city: "New York",
+    street: "Main St",
+    houseNumber: 9,
+    zipCode: 10001,
+  },
+};
+
 // 2. Написати функцію, яка приймає об’єкт юзера і виводить вітання типу “Доброго дня, (ім’я_юзера) (прізвище юзера)”
 
 function greeting(customer) {
