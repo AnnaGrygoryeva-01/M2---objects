@@ -8,6 +8,11 @@
 
 // 2. Написати функцію, яка приймає об’єкт юзера і виводить вітання типу “Доброго дня, (ім’я_юзера) (прізвище юзера)”
 
+function greeting(customer) {
+  console.log(`Hello, ${customer.firstName} ${customer.lastName}!`);
+}
+greeting(customer);
+
 // 3. Написати функцію, яка приймає об’єкт і виводить в консоль всі його властивості (за допомогою циклу for..in)
 
 function showObjects(obj) {
