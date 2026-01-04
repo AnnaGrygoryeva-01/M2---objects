@@ -53,4 +53,41 @@ showObjects(customer);
 
 // stop (зупинка) - метод нічого не приймає, при виклику встановлює поточну швидкість (speed) рівною 0
 
+const vehicle = {
+  color: "grey",
+  brand: "Audi",
+  model: "A4",
+  engineVolume: 2.0,
+  capacity: 5,
+  speed: 40,
+  maxSpeed: 240,
+  accelerate(a) {
+    let newSpeed = this.speed + a;
+    if (newSpeed > this.maxSpeed) {
+      this.speed = this.maxSpeed;
+    } else {
+      this.speed = newSpeed;
+    }
+    console.log(`Current speed: ${this.speed} km/h`);
+  },
+  deaccelerate(b) {
+    let newSpeed = this.speed - b;
+    if (newSpeed < 0) {
+      this.speed = 0;
+    } else {
+      this.speed = newSpeed;
+    }
+    console.log(`Current speed: ${this.speed} km/h`);
+  },
+  stop() {
+    this.speed = 0;
+    console.log(`Current speed: ${this.speed} km/h`);
+  },
+};
+
+// Checking:
+vehicle.accelerate(20);
+vehicle.deaccelerate(20);
+vehicle.stop();
+
 // 5. На основі об’єкта з завдання №4 розробити функцію-конструктор для масового створення таких об’єктів за переданими параметрами. В якості перевірки створити декілька екземплярів таких об’єктів з різними властивостями
