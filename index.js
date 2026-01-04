@@ -91,3 +91,50 @@ vehicle.deaccelerate(20);
 vehicle.stop();
 
 // 5. На основі об’єкта з завдання №4 розробити функцію-конструктор для масового створення таких об’єктів за переданими параметрами. В якості перевірки створити декілька екземплярів таких об’єктів з різними властивостями
+
+function Car(color, brand, model, engineVolume, capacity, speed, maxSpeed) {
+  this.color = color;
+  this.brand = brand;
+  this.model = model;
+  this.engineVolume = engineVolume;
+  this.capacity = capacity;
+  this.speed = speed;
+  this.maxSpeed = maxSpeed;
+  this.accelerate = function (a) {
+    let newSpeed = this.speed + a;
+    if (newSpeed > this.maxSpeed) {
+      this.speed = this.maxSpeed;
+    } else {
+      this.speed = newSpeed;
+    }
+    console.log(
+      `${this.brand} ${this.model} current speed: ${this.speed} km/h`
+    );
+  };
+  this.deaccelerate = function (b) {
+    let newSpeed = this.speed - b;
+    if (newSpeed < 0) {
+      this.speed = 0;
+    } else {
+      this.speed = newSpeed;
+    }
+    console.log(
+      `${this.brand} ${this.model} current speed: ${this.speed} km/h`
+    );
+  };
+  this.stop = function () {
+    this.speed = 0;
+    console.log(
+      `${this.brand} ${this.model} stopped. Speed: ${this.speed} km/h`
+    );
+  };
+}
+
+const audi = new Car("grey", "Audi", "A4", 2.0, 5, 40, 200);
+const bmw = new Car("black", "BMW", "X5", 3.0, 5, 0, 200);
+const porche = new Car("burgundy", "Porche", "911", 2.0, 5, 60, 200);
+
+// Checking:
+audi.accelerate(20);
+porche.deaccelerate(20);
+bmw.stop();
