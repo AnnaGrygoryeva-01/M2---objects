@@ -10,6 +10,14 @@
 
 // 3. Написати функцію, яка приймає об’єкт і виводить в консоль всі його властивості (за допомогою циклу for..in)
 
+function showObjects(obj) {
+  for (const key in obj) {
+    console.log(key, obj[key]);
+  }
+}
+
+showObjects(customer);
+
 // 4. Створити об’єкт car (машина) з властивостями:
 // колір
 // модель
